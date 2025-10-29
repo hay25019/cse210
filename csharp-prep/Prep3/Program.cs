@@ -13,8 +13,7 @@ class Program
             while (guessRight == false)
             {
                 Console.Write("What is your guess? ");
-                string stringGuess = Console.ReadLine();
-                int guess = int.Parse(stringGuess);
+                int guess = int.Parse(Console.ReadLine());
                 if (guess > number)
                 {
                     Console.WriteLine("Lower");
