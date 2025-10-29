@@ -17,7 +17,7 @@ class Program
             }
         } while (userNumber != 0);
         int total = 0;
-        int largest = 0;
+        int largest = numbers[0];
         foreach (int number in numbers)
         {
             total += number;
@@ -26,7 +26,7 @@ class Program
                 largest = number;
             }
         }
-        int average = total / numbers.Count;
+        float average = ((float)total) / numbers.Count;
         Console.WriteLine($"The sum is {total}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {largest}");
