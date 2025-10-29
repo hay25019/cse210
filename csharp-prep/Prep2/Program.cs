@@ -41,7 +41,14 @@ class Program
 
         if (sign != "")
         {
-            Console.WriteLine($"Grade: {letter}{sign}");
+            if (letter == "A" && sign == "+")
+            {
+                Console.WriteLine($"Grade: {letter}");
+            }
+            else
+            {
+                Console.WriteLine($"Grade: {letter}{sign}");
+            }
         }
         else
         {
