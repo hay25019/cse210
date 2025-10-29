@@ -45,6 +45,10 @@ class Program
             {
                 Console.WriteLine($"Grade: {letter}");
             }
+            else if (letter == "F")
+            {
+                Console.WriteLine($"Grade: {letter}");
+            }
             else
             {
                 Console.WriteLine($"Grade: {letter}{sign}");
