@@ -4,13 +4,15 @@ public class Entry
     public string _userInput;
     public string _fullEntry;
 
-    public string GetUserInput()
+    public void GetUserInput()
     {
         Random random = new Random();
         int randomIndex = random.Next(_prompts.Count);
         string prompt = _prompts[randomIndex];
         Console.WriteLine(prompt);
         string response = Console.ReadLine();
-        return response;
+        DateTime currentDay = DateTime.Now;
+        string dateText = currentDay.ToShortDateString();
+        _fullEntry = $"Date: {dateText} - Prompt: {prompt} {Environment.NewLine} {response}"
     }
 }
