@@ -42,7 +42,7 @@ public class Journal
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    string[] fields = line.Split(",");
+                    string[] fields = line.Split("|");
                     foreach (string field in fields)
                     {
                         _entries.Add(field);
