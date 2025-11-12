@@ -1,4 +1,5 @@
 using System.IO;
+using System.Text;
 
 public class Journal
 {
@@ -15,27 +16,66 @@ public class Journal
             Console.WriteLine(entry);
         }
     }
+    public string GetFileExtention(string filename)
+    {
+        string extention = Path.GetExtension(filename);
+        return extention.Substring(1).ToLower();
+    }
     public void LoadJournal()
     {
         Console.Write("What is the filename? ");
         string filename = Console.ReadLine();
-        string[] lines = System.IO.File.ReadAllLines(filename);
-
-        foreach (string line in lines)
+        string fileExt = GetFileExtention(filename);
+        if (fileExt == "txt")
         {
-            _entries.Add(line);
+            string[] lines = System.IO.File.ReadAllLines(filename);
+
+            foreach (string line in lines)
+            {
+                _entries.Add(line);
+            }
         }
+        else if (fileExt == "csv")
+        {
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] fields = line.Split(",");
+                    foreach (string field in fields)
+                    {
+                        _entries.Add(field);
+                    }
+                }
+            }
+        }
+        
     }
     public void SaveJournal()
     {
         Console.Write("What is the filename? ");
         string filename = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        string fileExt = GetFileExtention(filename);
+        if (fileExt == "txt")
         {
-            foreach (string entry in _entries)
+            using (StreamWriter outputFile = new StreamWriter(filename))
             {
-                outputFile.WriteLine(entry);
+                foreach (string entry in _entries)
+                {
+                    outputFile.WriteLine(entry);
+                }
             }
         }
+        else if (fileExt == "csv")
+        {
+            StringBuilder csvContent = new StringBuilder();
+            foreach (string entry in _entries)
+            {
+                csvContent.AppendLine(entry);
+            }
+            File.WriteAllText(filename, csvContent.ToString());
+        }
+        
     }
 }
