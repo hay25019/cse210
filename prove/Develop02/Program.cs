@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Journal journal = new Journal();
         bool go = true;
         do
         {
@@ -18,7 +19,20 @@ class Program
             if (reply == "1")
             {
                 Entry entry = new Entry();
-                entry.GetUserInput();
+                string input = entry.GetUserInput();
+                journal.AppendEntry(input);
+            }
+            else if (reply == "2")
+            {
+                journal.DisplayJournal();
+            }
+            else if (reply == "3")
+            {
+                journal.LoadJournal();
+            }
+            else if (reply == "4")
+            {
+                journal.SaveJournal();
             }
             else if (reply == "5")
             {
