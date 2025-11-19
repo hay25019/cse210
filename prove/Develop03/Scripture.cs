@@ -20,9 +20,23 @@ public class Scripture
         {
             int index = random.Next(0, wordList.Count);
             wordList[index].MakeDissapear();
-            wordList.Remove(wordList[index]);
         }
-        
-
+    }
+    public bool CheckIsVisible()
+    {
+        bool visible = true;
+        List<Word> visibleWords = [];
+        foreach (Word word in wordList)
+        {
+            if (word.GetIsVisible() == true)
+            {
+                visibleWords.Add(word);
+            }
+        }
+        if (visibleWords.Count == 0)
+        {
+            visible = false;
+        }
+        return visible;
     }
 }
