@@ -1,11 +1,14 @@
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 
 public class Scripture
 {
-    private List<Word> wordList;
+    private List<Word> wordList = [];
+    private string stringScripture;
+    private string scriptureReference;
     private Random random = new Random();
-    public Scripture(string scripture)
+    public Scripture(string reference, string scripture)
     {
         string[] stringList = scripture.Split(" ");
         foreach (string text in stringList)
@@ -13,6 +16,16 @@ public class Scripture
             Word word = new Word(text);
             wordList.Add(word);
         }
+        scriptureReference = reference;
+    }
+    private void MakeStringFromList()
+    {
+        List<string> stringList = [];
+        foreach (Word word in wordList)
+        {
+            stringList.Add(word.GetVisibleContent());
+        }
+        stringScripture = string.Join(" ", stringList);
     }
     public void PickRandomWord()
     {
@@ -38,5 +51,11 @@ public class Scripture
             visible = false;
         }
         return visible;
+    }
+    public void DisplayScripture()
+    {
+        MakeStringFromList();
+        Console.Write($"{scriptureReference} ");
+        Console.WriteLine(stringScripture);
     }
 }
