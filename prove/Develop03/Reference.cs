@@ -1,7 +1,7 @@
 public class Reference
 {
     private string reference;
-    public void SetReference(string text)
+    public Reference(string text)
     {
         reference = text;
     }

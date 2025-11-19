@@ -8,7 +8,7 @@ public class Word
     public Word(string text)
     {
         wordContent = text;
-        hiddenContent = new string('*', text.Length);
+        hiddenContent = new string('-', text.Length);
         visibleContent = wordContent;
     }
     public void MakeDissapear()

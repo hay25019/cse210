@@ -6,7 +6,7 @@ public class Scripture
 {
     private List<Word> wordList = [];
     private string stringScripture;
-    private string scriptureReference;
+    private Reference scriptureReference;
     private Random random = new Random();
     public Scripture(string reference, string scripture)
     {
@@ -16,7 +16,7 @@ public class Scripture
             Word word = new Word(text);
             wordList.Add(word);
         }
-        scriptureReference = reference;
+        scriptureReference = new Reference(reference);
     }
     private void MakeStringFromList()
     {
@@ -56,7 +56,8 @@ public class Scripture
     {
         MakeStringFromList();
         Console.Clear();
-        Console.Write($"{scriptureReference} ");
+        Console.Write($"{scriptureReference.GetReference()} ");
         Console.WriteLine(stringScripture);
+        Console.WriteLine("");
     }
 }
