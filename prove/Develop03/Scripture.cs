@@ -55,6 +55,7 @@ public class Scripture
     public void DisplayScripture()
     {
         MakeStringFromList();
+        Console.Clear();
         Console.Write($"{scriptureReference} ");
         Console.WriteLine(stringScripture);
     }
