@@ -20,4 +20,8 @@ public class Word
     {
         return visibleContent;
     }
+    public bool GetIsVisible()
+    {
+        return isVisible;
+    }
 }
