@@ -2,17 +2,17 @@ using System.Text;
 
 public class Journal
 {
-    public List<string> _entries = [];
+    public List<Entry> _entries = [];
 
-    public void AppendEntry(string entry)
+    public void AppendEntry(Entry entry)
     {
         _entries.Add(entry);
     }
     public void DisplayJournal()
     {
-        foreach (string entry in _entries)
+        foreach (Entry entry in _entries)
         {
-            Console.WriteLine(entry);
+            Console.WriteLine(entry.GetEntry());
         }
     }
     public string GetFileExtention(string filename)
@@ -31,7 +31,8 @@ public class Journal
 
             foreach (string line in lines)
             {
-                _entries.Add(line);
+                Entry entry = new Entry(line);
+                _entries.Add(entry);
             }
         }
         else if (fileExt == "csv")
@@ -44,7 +45,8 @@ public class Journal
                     string[] fields = line.Split("|");
                     foreach (string field in fields)
                     {
-                        _entries.Add(field);
+                        Entry entry = new Entry(field);
+                        _entries.Add(entry);
                     }
                 }
             }
@@ -60,18 +62,18 @@ public class Journal
         {
             using (StreamWriter outputFile = new StreamWriter(filename))
             {
-                foreach (string entry in _entries)
+                foreach (Entry entry in _entries)
                 {
-                    outputFile.WriteLine(entry);
+                    outputFile.WriteLine(entry.GetEntry());
                 }
             }
         }
         else if (fileExt == "csv")
         {
             StringBuilder csvContent = new StringBuilder();
-            foreach (string entry in _entries)
+            foreach (Entry entry in _entries)
             {
-                csvContent.AppendLine(entry);
+                csvContent.AppendLine(entry.GetEntry());
             }
             File.WriteAllText(filename, csvContent.ToString());
         }
