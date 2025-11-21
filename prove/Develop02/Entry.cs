@@ -1,10 +1,20 @@
+using System.Net;
 using System.Runtime.CompilerServices;
 
 public class Entry
 {
     public List<string> _prompts = ["What was your favorite thing today?", "What do you wish you could do-over from today?", "How many people did you serve today?", "What are some blessings you got today?", "How many times did you compliment someone?"];
+    private string _entry;
 
-    public string GetUserInput()
+    public Entry()
+    {
+        
+    }
+    public Entry(string loadText)
+    {
+        _entry = loadText;
+    }
+    public void StartUserInput()
     {
         Random random = new Random();
         Console.Write("Do you want a prompt(y/n)? ");
@@ -23,6 +33,10 @@ public class Entry
         string response = Console.ReadLine();
         DateTime currentDay = DateTime.Now;
         string dateText = currentDay.ToShortDateString();
-        return $"Date: {dateText} - Prompt: {prompt} {Environment.NewLine} {response}";
+        _entry = $"Date: {dateText} - Prompt: {prompt} {Environment.NewLine} {response}";
+    }
+    public string GetEntry()
+    {
+        return _entry;
     }
 }

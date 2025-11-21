@@ -19,8 +19,8 @@ class Program
             if (reply == "1")
             {
                 Entry entry = new Entry();
-                string input = entry.GetUserInput();
-                journal.AppendEntry(input);
+                entry.StartUserInput();
+                journal.AppendEntry(entry);
             }
             else if (reply == "2")
             {
