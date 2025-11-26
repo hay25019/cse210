@@ -10,25 +10,39 @@ public class Activity
         Console.Write("How long, in seconds, would you like your session? ");
         int.TryParse(Console.ReadLine(), out _duration);
     }
-    public void SpinnerPause()
+    protected void SpinnerPause()
     {
         for (int i = 0; i < 3; i++)
         {
             if (i != 0)
             {
-                Console.Write("\b \b");
+                Console.Write("\b");
             }
             Console.Write("|");
             Thread.Sleep(500);
-            Console.Write("\b \b");
+            Console.Write("\b");
             Console.Write("/");
             Thread.Sleep(500);
-            Console.Write("\b \b");
+            Console.Write("\b");
             Console.Write("-");
             Thread.Sleep(500);
-            Console.Write("\b \b");
+            Console.Write("\b");
             Console.Write("\\");
             Thread.Sleep(500);
+        }
+    }
+    public void CountPause(int length)
+    {
+        int number = length;
+        for (int i = 0; i < length; i++)
+        {
+            if (i != 0)
+            {
+                Console.Write("\b");
+            }
+            Console.Write(number);
+            Thread.Sleep(1000);
+            number--;
         }
     }
 }
