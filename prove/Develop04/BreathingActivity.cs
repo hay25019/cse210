@@ -16,9 +16,6 @@ public class BreathingActivity : Activity
     }
     public void InOut()
     {
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        SpinnerPause();
         Console.WriteLine("");
         Console.Write("Breathe in...");
         CountPause(2);

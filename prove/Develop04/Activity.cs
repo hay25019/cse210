@@ -13,10 +13,13 @@ public class Activity
         Console.WriteLine("");
         Console.Write("How long, in seconds, would you like your session? ");
         int.TryParse(Console.ReadLine(), out _duration);
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        SpinnerPause(3);
     }
-    protected void SpinnerPause()
+    protected void SpinnerPause(int length)
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < length; i++)
         {
             if (i != 0)
             {
