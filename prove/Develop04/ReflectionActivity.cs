@@ -20,5 +20,20 @@ public class ReflectionActivity : Activity
         Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
         Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+        Console.Write("You may begin in: ");
+        CountPause(5);
+        Console.Clear();
+        for (int i = 0; i < (_duration / 10); i++)
+        {
+            if (i == 0)
+            {
+                Console.Write($"{_questions[random.Next(0, _questions.Count())]} ");
+            }
+            else
+            {
+                Console.Write($"\n{_questions[random.Next(0, _questions.Count())]} ");
+            }
+            SpinnerPause(5);
+        }
     }
 }

@@ -16,7 +16,7 @@ public class Activity
         int.TryParse(Console.ReadLine(), out _duration);
         Console.Clear();
         Console.WriteLine("Get ready...");
-        SpinnerPause(3);
+        SpinnerPause(1);
     }
     protected void SpinnerPause(int length)
     {
