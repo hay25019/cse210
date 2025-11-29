@@ -13,7 +13,6 @@ public class ReflectionActivity : Activity
     }
     public void RunActivity()
     {
-        Console.Clear();
         DisplayStart(_name, _description);
         Console.WriteLine("\nConsider the following prompt:");
         Console.WriteLine($"\n --- {_prompts[random.Next(0, _prompts.Count())]} ---");

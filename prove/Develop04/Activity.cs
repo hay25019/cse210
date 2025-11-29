@@ -8,6 +8,7 @@ public class Activity
     }
     public void DisplayStart(string name, string description)
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {name}.");
         Console.WriteLine("");
         Console.WriteLine($"{description}");

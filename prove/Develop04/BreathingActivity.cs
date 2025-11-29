@@ -9,7 +9,6 @@ public class BreathingActivity : Activity
     }
     public void RunActivity()
     {
-        Console.Clear();
         DisplayStart(_name, _description);
         InOut();
         DisplayEnd(_name);
