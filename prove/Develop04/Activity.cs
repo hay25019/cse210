@@ -1,6 +1,10 @@
 public class Activity
 {
     protected int _duration;
+
+    public Activity(){
+
+    }
     public void DisplayStart(string name, string description)
     {
         Console.WriteLine($"Welcome to the {name}.");
@@ -12,7 +16,7 @@ public class Activity
     }
     protected void SpinnerPause()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (i != 0)
             {
@@ -30,6 +34,7 @@ public class Activity
             Console.Write("\\");
             Thread.Sleep(500);
         }
+        Console.Write("\b ");
     }
     public void CountPause(int length)
     {
@@ -44,6 +49,7 @@ public class Activity
             Thread.Sleep(1000);
             number--;
         }
+        Console.Write("\b ");
     }
     public void DisplayEnd(string name)
     {

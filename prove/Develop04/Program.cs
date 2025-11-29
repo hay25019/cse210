@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Activity activity = new Activity();
-        activity.CountPause(6);
+        BreathingActivity breathingActivity = new BreathingActivity();
+        breathingActivity.RunActivity();
     }
 }
