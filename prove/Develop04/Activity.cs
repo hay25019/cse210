@@ -45,4 +45,10 @@ public class Activity
             number--;
         }
     }
+    public void DisplayEnd(string name)
+    {
+        Console.WriteLine("Well done!!");
+        Console.WriteLine("");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {name}");
+    }
 }
