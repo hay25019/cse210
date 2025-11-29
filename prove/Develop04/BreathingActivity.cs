@@ -12,6 +12,7 @@ public class BreathingActivity : Activity
         Console.Clear();
         DisplayStart(_name, _description);
         InOut();
+        DisplayEnd(_name);
     }
     public void InOut()
     {
