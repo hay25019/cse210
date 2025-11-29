@@ -34,5 +34,6 @@ public class ReflectionActivity : Activity
             }
             SpinnerPause(5);
         }
+        DisplayEnd(_name);
     }
 }
