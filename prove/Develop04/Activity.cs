@@ -1,6 +1,7 @@
 public class Activity
 {
     protected int _duration;
+    protected Random random = new Random();
 
     public Activity(){
 
