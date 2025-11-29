@@ -34,6 +34,7 @@ public class ReflectionActivity : Activity
             }
             SpinnerPause(5);
         }
+        Console.WriteLine("");
         DisplayEnd(_name);
     }
 }

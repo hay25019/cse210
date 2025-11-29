@@ -62,5 +62,6 @@ public class Activity
         Console.WriteLine("Well done!!");
         Console.WriteLine("");
         Console.WriteLine($"You have completed another {_duration} seconds of the {name}");
+        Thread.Sleep(3000);
     }
 }
