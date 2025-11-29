@@ -19,11 +19,14 @@ public class ListingActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         DateTime currentTime = DateTime.Now;
-        do
+        List<string> answers = [];
+        while (currentTime < endTime)
         {
             currentTime = DateTime.Now;
-            Console.ReadLine();
-        } while (currentTime < endTime);
+            answers.Add(Console.ReadLine());
+        }
+        answers.RemoveAll(string.IsNullOrEmpty);
+        Console.WriteLine($"You listed {answers.Count()} items!");
         DisplayEnd(_name);
     }
 }
