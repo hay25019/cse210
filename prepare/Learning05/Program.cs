@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Shape> shapes = [];
+        List<Shape> shapes = new List<Shape>();
         Square square = new Square("red", 12);
         Rectangle rectangle = new Rectangle("green", 5, 6);
         Circle circle = new Circle("blue", 3);
