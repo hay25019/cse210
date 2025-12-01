@@ -5,40 +5,40 @@ using System.Security.Principal;
 
 public class Scripture
 {
-    private Dictionary<int, Word> wordList = new Dictionary<int, Word>();
-    private string stringScripture;
-    private Reference scriptureReference;
-    private Random random = new Random();
+    private Dictionary<int, Word> _wordList = new Dictionary<int, Word>();
+    private string _stringScripture;
+    private Reference _scriptureReference;
+    private Random _random = new Random();
     public Scripture(string reference, string scripture)
     {
-        string[] stringList = scripture.Split(" ");
-        for (int i = 0; i < stringList.Count(); i++)
+        string[] _stringList = scripture.Split(" ");
+        for (int i = 0; i < _stringList.Count(); i++)
         {
-            string text = stringList[i];
-            Word word = new Word(text);
-            wordList.Add(i, word);
+            string text = _stringList[i];
+            Word _word = new Word(text);
+            _wordList.Add(i, _word);
         }
-        scriptureReference = new Reference(reference);
+        _scriptureReference = new Reference(reference);
     }
     private void MakeStringFromList()
     {
-        List<string> stringList = [];
-        for (int i = 0; i < wordList.Count(); i++)
+        List<string> _stringList = [];
+        for (int i = 0; i < _wordList.Count(); i++)
         {
-            Word word = wordList[i];
-            stringList.Add(word.GetVisibleContent());
+            Word _word = _wordList[i];
+            _stringList.Add(_word.GetVisibleContent());
         }
-        stringScripture = string.Join(" ", stringList);
+        _stringScripture = string.Join(" ", _stringList);
     }
     public void PickRandomWord()
     {
         for (int i = 0; i < 3; i++)
         {
-            int index;
+            int _index;
             while (true)
             {
-                index = random.Next(0, wordList.Count);
-                if (wordList[index].GetIsVisible() == false)
+                _index = _random.Next(0, _wordList.Count);
+                if (_wordList[_index].GetIsVisible() == false)
                 {
                     if (CheckIsVisible() == false)
                     {
@@ -55,33 +55,33 @@ public class Scripture
                 }
                 
             }
-            wordList[index].MakeDissapear();
+            _wordList[_index].MakeDissapear();
         }
     }
     public bool CheckIsVisible()
     {
-        bool visible = true;
-        List<Word> visibleWords = [];
-        for (int i = 0; i < wordList.Count(); i++)
+        bool _visible = true;
+        List<Word> _visibleWords = [];
+        for (int i = 0; i < _wordList.Count(); i++)
         {
-            Word word = wordList[i];
-            if (word.GetIsVisible() == true)
+            Word _word = _wordList[i];
+            if (_word.GetIsVisible() == true)
             {
-                visibleWords.Add(word);
+                _visibleWords.Add(_word);
             }
         }
-        if (visibleWords.Count == 0)
+        if (_visibleWords.Count == 0)
         {
-            visible = false;
+            _visible = false;
         }
-        return visible;
+        return _visible;
     }
     public void DisplayScripture()
     {
         MakeStringFromList();
         Console.Clear();
-        Console.Write($"{scriptureReference.GetReference()} ");
-        Console.WriteLine(stringScripture);
+        Console.Write($"{_scriptureReference.GetReference()} ");
+        Console.WriteLine(_stringScripture);
         Console.WriteLine("");
     }
 }
