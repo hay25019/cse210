@@ -1,27 +1,27 @@
 public class Word
 {
-    private string wordContent;
-    private string hiddenContent;
-    private string visibleContent;
-    private bool isVisible = true;
+    private string _wordContent;
+    private string _hiddenContent;
+    private string _visibleContent;
+    private bool _isVisible = true;
 
     public Word(string text)
     {
-        wordContent = text;
-        hiddenContent = new string('-', text.Length);
-        visibleContent = wordContent;
+        _wordContent = text;
+        _hiddenContent = new string('-', text.Length);
+        _visibleContent = _wordContent;
     }
     public void MakeDissapear()
     {
-        isVisible = false;
-        visibleContent = hiddenContent;
+        _isVisible = false;
+        _visibleContent = _hiddenContent;
     }
     public string GetVisibleContent()
     {
-        return visibleContent;
+        return _visibleContent;
     }
     public bool GetIsVisible()
     {
-        return isVisible;
+        return _isVisible;
     }
 }
