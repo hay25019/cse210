@@ -1,7 +1,5 @@
 public class ListingActivity : Activity
 {
-    private string _name = "Listing Activity";
-    private string _description = "This activity will help you reflect on the food things in your life by having you list as many things as you can in a certain area.";
     private List<string> _prompts = ["Who are people that you appreciate?", "What are personal strengths of yours?", "Who are people that you have helped this week?", "When have you felt the Holy Ghost this month?", "Who are some of your personal heroes?"];
 
     public ListingActivity() : base()
@@ -10,7 +8,7 @@ public class ListingActivity : Activity
     }
     public void RunActivity()
     {
-        DisplayStart(_name, _description);
+        DisplayStart(2);
         Console.WriteLine("List as many responses you can to the following prompt:");
         Console.WriteLine($" --- {_prompts[random.Next(0, _prompts.Count())]} ---");
         Console.Write("You may begin in: ");
@@ -27,6 +25,6 @@ public class ListingActivity : Activity
         }
         answers.RemoveAll(string.IsNullOrEmpty);
         Console.WriteLine($"You listed {answers.Count()} items!");
-        DisplayEnd(_name);
+        DisplayEnd(2);
     }
 }

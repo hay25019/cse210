@@ -50,9 +50,13 @@ class Program
                     Console.WriteLine($"Activity: {kvp.Key}, Times done: {kvp.Value}");
                 }
             }
-            else
+            else if (answer == "5")
             {
                 go = false;
+            }
+            else
+            {
+                Console.Clear();
             }
         }
     }
