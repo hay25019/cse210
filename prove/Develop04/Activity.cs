@@ -2,16 +2,18 @@ public class Activity
 {
     protected int _duration;
     protected Random random = new Random();
+    private List<string> _names = ["Breathing Activity", "Reflection Activity", "Listing Activity"];
+    private List<string> _descriptions = ["This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", "This activity will help you reflect on the food things in your life by having you list as many things as you can in a certain area."];
 
     public Activity(){
 
     }
-    public void DisplayStart(string name, string description)
+    public void DisplayStart(int index)
     {
         Console.Clear();
-        Console.WriteLine($"Welcome to the {name}.");
+        Console.WriteLine($"Welcome to the {_names[index]}.");
         Console.WriteLine("");
-        Console.WriteLine($"{description}");
+        Console.WriteLine($"{_descriptions[index]}");
         Console.WriteLine("");
         Console.Write("How long, in seconds, would you like your session? ");
         int.TryParse(Console.ReadLine(), out _duration);
@@ -56,12 +58,12 @@ public class Activity
         }
         Console.Write("\b ");
     }
-    public void DisplayEnd(string name)
+    public void DisplayEnd(int index)
     {
         Console.WriteLine("");
         Console.WriteLine("Well done!!");
         Console.WriteLine("");
-        Console.WriteLine($"You have completed another {_duration} seconds of the {name}");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_names[index]}");
         Thread.Sleep(3000);
     }
 }

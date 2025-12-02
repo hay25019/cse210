@@ -1,17 +1,14 @@
 public class BreathingActivity : Activity
 {
-    private string _name = "Breathing Activity";
-    private string _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
-
     public BreathingActivity() : base()
     {
         
     }
     public void RunActivity()
     {
-        DisplayStart(_name, _description);
+        DisplayStart(0);
         InOut();
-        DisplayEnd(_name);
+        DisplayEnd(0);
     }
     public void InOut()
     {
