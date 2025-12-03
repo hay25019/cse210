@@ -8,4 +8,8 @@ public class EternalGoal : Goal
     {
         
     }
+    public override string GetStringGoal()
+    {
+        return $"EternalGoal|{_name}|{_description}|{_pointValue}|{_completed}";
+    }
 }

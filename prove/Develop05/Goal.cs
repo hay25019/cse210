@@ -43,4 +43,8 @@ public abstract class Goal
     {
         return $"Name: {_name}\n{_description}\nValue: {_pointValue}\nCompleted: [{_completed}]";
     }
+    public virtual string GetStringGoal()
+    {
+        return $"Goal|{_name}|{_description}|{_pointValue}|{_completed}";
+    }
 }

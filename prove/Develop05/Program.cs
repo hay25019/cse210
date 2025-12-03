@@ -3,9 +3,7 @@ using System.Formats.Asn1;
 
 class Program
 {
-    static SimpleList simpleGoals = new SimpleList();
-    static EternalList eternalGoals = new EternalList();
-    static CheckList checklistGoals = new CheckList();
+    static GoalList goals = new GoalList();
     static void Main(string[] args)
     {
         bool go = true;
@@ -30,11 +28,11 @@ class Program
             }
             else if (answer == 3)
             {
-                SaveAll();
+                goals.SaveGoals();
             }
             else if (answer == 4)
             {
-                LoadAll();
+                goals.LoadGoals();
             }
             else if (answer == 6)
             {
@@ -65,11 +63,11 @@ class Program
         int goalPoints = int.Parse(Console.ReadLine());
         if (goalType == 1)
         {
-            simpleGoals.Add(new SimpleGoal(goalName, goalDescription, goalPoints));
+            goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints));
         }
         if (goalType == 2)
         {
-            eternalGoals.Add(new EternalGoal(goalName, goalDescription, goalPoints));
+            goals.Add(new EternalGoal(goalName, goalDescription, goalPoints));
         }
         if (goalType == 3)
         {
@@ -77,29 +75,13 @@ class Program
             int goalTimes = int.Parse(Console.ReadLine());
             Console.Write("What is the bonus for accomplishing it that many times? ");
             int goalBonus = int.Parse(Console.ReadLine());
-            checklistGoals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, goalBonus, goalTimes));
+            goals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, goalBonus, goalTimes));
         }
 
     }
     public static void ListAll()
     {
-        Console.WriteLine("Simple goals:");
-        simpleGoals.ListGoals();
-        Console.WriteLine("Eternal goals:");
-        eternalGoals.ListGoals();
-        Console.WriteLine("Checklist goals:");
-        checklistGoals.ListGoals();
-    }
-    public static void SaveAll()
-    {
-        simpleGoals.SaveGoals();
-        eternalGoals.SaveGoals();
-        checklistGoals.SaveGoals();
-    }
-    public static void LoadAll()
-    {
-        simpleGoals.LoadGoals();
-        eternalGoals.LoadGoals();
-        checklistGoals.LoadGoals();
+        Console.WriteLine("The goals are:");
+        goals.ListGoals();
     }
 }
