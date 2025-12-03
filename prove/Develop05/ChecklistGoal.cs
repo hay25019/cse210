@@ -18,4 +18,8 @@ public class ChecklistGoal : Goal
             _completed = "X";
         }
     }
+    public override string GetGoal()
+    {
+        return $"Name: {_name}\n{_description}\nValue: {_pointValue}\nBonus Value: {_bonusValue}\nTimes Completed: {_timesCompleted}/{_timesToComplete}\nCompleted: [{_completed}]";
+    }
 }

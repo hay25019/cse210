@@ -5,10 +5,13 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        EternalGoal eGoal = new EternalGoal("Eternal Goal", "This will never end", 10);
-        Console.WriteLine(eGoal.GetGoal());
-        eGoal.RecordEvent();
-        eGoal.RecordEvent();
-        Console.WriteLine(eGoal.GetGoal());
+        ChecklistGoal cGoal = new ChecklistGoal("Checklist Goal", "This is a checklist", 10, 50, 3);
+        Console.WriteLine(cGoal.GetGoal());
+        cGoal.RecordEvent();
+        Console.WriteLine(cGoal.GetGoal());
+        cGoal.RecordEvent();
+        Console.WriteLine(cGoal.GetGoal());
+        cGoal.RecordEvent();
+        Console.WriteLine(cGoal.GetGoal());
     }
 }
