@@ -1,4 +1,5 @@
 using System;
+using System.Formats.Asn1;
 
 class Program
 {
@@ -11,9 +12,34 @@ class Program
         
         while (go == true)
         {
-            FullClear();
-            ListAll();
-            go = false;
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("  1. Create New Goal");
+            Console.WriteLine("  2. List Goals");
+            Console.WriteLine("  3. Save Goals");
+            Console.WriteLine("  4. Load Goals");
+            Console.WriteLine("  5. Record Event");
+            Console.WriteLine("  6. Quit");
+            int answer = int.Parse(Console.ReadLine());
+            if (answer == 1)
+            {
+                CreateGoal();
+            }
+            else if (answer == 2)
+            {
+                ListAll();
+            }
+            else if (answer == 3)
+            {
+                SaveAll();
+            }
+            else if (answer == 4)
+            {
+                LoadAll();
+            }
+            else if (answer == 6)
+            {
+                go = false;
+            }
         }
     }
     public static void FullClear()
@@ -63,5 +89,17 @@ class Program
         eternalGoals.ListGoals();
         Console.WriteLine("Checklist goals:");
         checklistGoals.ListGoals();
+    }
+    public static void SaveAll()
+    {
+        simpleGoals.SaveGoals();
+        eternalGoals.SaveGoals();
+        checklistGoals.SaveGoals();
+    }
+    public static void LoadAll()
+    {
+        simpleGoals.LoadGoals();
+        eternalGoals.LoadGoals();
+        checklistGoals.LoadGoals();
     }
 }
