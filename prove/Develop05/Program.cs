@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        Console.Clear();
+        SimpleGoal sGoal = new SimpleGoal("Simple Goal", "This is a goal", 50);
+        Console.WriteLine(sGoal.GetGoal());
+        sGoal.RecordEvent();
+        Console.WriteLine(sGoal.GetGoal());
     }
 }

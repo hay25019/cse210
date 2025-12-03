@@ -15,7 +15,7 @@ public class ChecklistGoal : Goal
         if (_timesCompleted == _timesToComplete)
         {
             _score += _bonusValue;
-            _completed = true;
+            _completed = "X";
         }
     }
 }

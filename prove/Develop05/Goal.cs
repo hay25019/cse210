@@ -5,7 +5,7 @@ public abstract class Goal
     protected string _name;
     protected string _description;
     protected int _pointValue;
-    protected bool _completed = false;
+    protected string _completed = " ";
     protected int _score;
 
     public Goal(string name, string description, int pointValue)
@@ -26,7 +26,7 @@ public abstract class Goal
     {
         return _pointValue;
     }
-    public bool GetCompleted()
+    public string GetCompleted()
     {
         return _completed;
     }
@@ -37,6 +37,10 @@ public abstract class Goal
     public virtual void RecordEvent()
     {
         _score += _pointValue;
-        _completed = true;
+        _completed = "X";
+    }
+    public virtual string GetGoal()
+    {
+        return $"Name: {_name}\n{_description}\nValue: {_pointValue}\nCompleted: [{_completed}]";
     }
 }
