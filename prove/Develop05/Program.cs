@@ -5,9 +5,10 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        SimpleGoal sGoal = new SimpleGoal("Simple Goal", "This is a goal", 50);
-        Console.WriteLine(sGoal.GetGoal());
-        sGoal.RecordEvent();
-        Console.WriteLine(sGoal.GetGoal());
+        EternalGoal eGoal = new EternalGoal("Eternal Goal", "This will never end", 10);
+        Console.WriteLine(eGoal.GetGoal());
+        eGoal.RecordEvent();
+        eGoal.RecordEvent();
+        Console.WriteLine(eGoal.GetGoal());
     }
 }
