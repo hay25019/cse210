@@ -27,7 +27,7 @@ public class ChecklistGoal : Goal
     }
     public override string GetGoal()
     {
-        return $"Name: {_name}\n{_description}\nValue: {_pointValue}\nBonus Value: {_bonusValue}\nTimes Completed: {_timesCompleted}/{_timesToComplete}\nCompleted: [{_completed}]";
+        return $"[{_completed}] {_name} ({_description}) -- Currently completed: {_timesCompleted}/{_timesToComplete}";
     }
     public override string GetStringGoal()
     {

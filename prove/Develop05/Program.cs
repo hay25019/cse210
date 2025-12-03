@@ -6,8 +6,8 @@ class Program
     static GoalList goals = new GoalList();
     static void Main(string[] args)
     {
+        FullClear();
         bool go = true;
-        
         while (go == true)
         {
             Console.WriteLine("Menu Options:");
@@ -57,7 +57,7 @@ class Program
         int goalType = int.Parse(Console.ReadLine());
         Console.Write("What is the name of your goal? ");
         string goalName = Console.ReadLine();
-        Console.Write("What is a short description of your talk? ");
+        Console.Write("What is a short description of your goal? ");
         string goalDescription = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         int goalPoints = int.Parse(Console.ReadLine());
