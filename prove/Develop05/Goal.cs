@@ -2,10 +2,10 @@ using System.Reflection.Metadata;
 
 public abstract class Goal
 {
-    private string _name;
-    private string _description;
-    private int _pointValue;
-    private bool _completed = false;
+    protected string _name;
+    protected string _description;
+    protected int _pointValue;
+    protected bool _completed = false;
     protected int _score;
 
     public Goal(string name, string description, int pointValue)
