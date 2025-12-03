@@ -34,6 +34,10 @@ class Program
             {
                 goals.LoadGoals();
             }
+            else if (answer == 5)
+            {
+                goals.ListRecord();
+            }
             else if (answer == 6)
             {
                 go = false;

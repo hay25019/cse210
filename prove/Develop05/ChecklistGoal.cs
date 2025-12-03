@@ -17,13 +17,13 @@ public class ChecklistGoal : Goal
     }
     public override void RecordEvent()
     {
-        _score += _pointValue;
-        _timesCompleted++;
         if (_timesCompleted == _timesToComplete)
         {
-            _score += _bonusValue;
+            _pointValue += _bonusValue;
             _completed = "X";
         }
+        _score += _pointValue;
+        _timesCompleted++;
     }
     public override string GetGoal()
     {

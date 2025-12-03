@@ -4,11 +4,28 @@ public class GoalList : List<Goal>
 {
     public void ListGoals()
     {
-        foreach (Goal goal in this)
+        for (int i = 0; i < this.Count(); i++)
         {
-            Console.WriteLine(goal.GetGoal());
+            Goal goal = this[i];
+            Console.WriteLine($"{i + 1}. {goal.GetGoal()}");
             Console.WriteLine();
         }
+    }
+    public void ListRecord()
+    {
+        for (int i = 0; i < this.Count(); i++)
+        {
+            Goal goal = this[i];
+            if (goal.GetCompleted() != "X")
+            {
+                Console.WriteLine($"{i + 1}. {goal.GetName()}");
+            }
+        }
+        Console.Write("Which goal did you accomplish? ");
+        int goalNum = int.Parse(Console.ReadLine()) - 1;
+        this[goalNum].RecordEvent();
+        Console.WriteLine($"Congratulations! You have earned {this[goalNum].GetPointValue()} points!");
+        Console.WriteLine($"\nYou now have {this[goalNum].GetScore()} points.\n");
     }
     public void SaveGoals()
     {
