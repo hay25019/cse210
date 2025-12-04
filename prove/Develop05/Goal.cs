@@ -8,6 +8,13 @@ public abstract class Goal
     protected string _completed = " ";
     protected int _score;
 
+    public Goal(string name, string description, int pointValue, int score)
+    {
+        _name = name;
+        _description = description;
+        _pointValue = pointValue;
+        _score = score;
+    }
     public Goal(string name, string description, int pointValue)
     {
         _name = name;
@@ -45,6 +52,6 @@ public abstract class Goal
     }
     public virtual string GetStringGoal()
     {
-        return $"Goal|{_name}|{_description}|{_pointValue}|{_completed}";
+        return $"Goal|{_score}|{_name}|{_description}|{_pointValue}|{_completed}";
     }
 }

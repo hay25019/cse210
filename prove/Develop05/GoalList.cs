@@ -47,17 +47,17 @@ public class GoalList : List<Goal>
                 String[] lines = line.Split("|");
                 if (lines[0] == "SimpleGoal")
                 {
-                    SimpleGoal simpleGoal = new SimpleGoal(lines[1], lines[2], int.Parse(lines[3]));
+                    SimpleGoal simpleGoal = new SimpleGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
                     this.Add(simpleGoal);
                 }
                 if (lines[0] == "EternalGoal")
                 {
-                    EternalGoal eternalGoal = new EternalGoal(lines[1], lines[2], int.Parse(lines[3]));
+                    EternalGoal eternalGoal = new EternalGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
                     this.Add(eternalGoal);
                 }
                 if (lines[0] == "ChecklistGoal")
                 {
-                    ChecklistGoal checklistGoal = new ChecklistGoal(lines[1], lines[2], int.Parse(lines[3]), int.Parse(lines[4]), int.Parse(lines[5]), int.Parse(lines[6]), lines[7]);
+                    ChecklistGoal checklistGoal = new ChecklistGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]), int.Parse(lines[5]), int.Parse(lines[6]), int.Parse(lines[7]), lines[8]);
                     this.Add(checklistGoal);
                 }
             }

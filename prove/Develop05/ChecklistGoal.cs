@@ -3,6 +3,13 @@ public class ChecklistGoal : Goal
     private int _timesToComplete;
     private int _bonusValue;
     private int _timesCompleted;
+    public ChecklistGoal(int score, string name, string description, int pointValue, int bonusValue, int timesToComplete, int timesCompleted, string completed) : base(name, description, pointValue, score)
+    {
+        _bonusValue = bonusValue;
+        _timesToComplete = timesToComplete;
+        _timesCompleted = timesCompleted;
+        _completed = completed;
+    }
     public ChecklistGoal(string name, string description, int pointValue, int bonusValue, int timesToComplete, int timesCompleted, string completed) : base(name, description, pointValue)
     {
         _bonusValue = bonusValue;
@@ -31,7 +38,7 @@ public class ChecklistGoal : Goal
     }
     public override string GetStringGoal()
     {
-        return $"ChecklistGoal|{_name}|{_description}|{_pointValue}|{_bonusValue}|{_timesToComplete}|{_timesCompleted}|{_completed}";
+        return $"ChecklistGoal|{_score}{_name}|{_description}|{_pointValue}|{_bonusValue}|{_timesToComplete}|{_timesCompleted}|{_completed}";
     }
     public int GetTimesToComplete()
     {
