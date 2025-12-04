@@ -29,11 +29,15 @@ class Program
             }
             else if (answer == 3)
             {
-                goals.SaveGoals();
+                Console.Write("Where do you want to save it? ");
+                string saveFile = Console.ReadLine();
+                goals.ForceSave(saveFile);
             }
             else if (answer == 4)
             {
-                goals.LoadGoals();
+                Console.Write("Where do you want to load from? ");
+                string loadFile = Console.ReadLine();
+                goals.ForceLoad(loadFile);
             }
             else if (answer == 5)
             {

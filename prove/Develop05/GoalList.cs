@@ -39,9 +39,44 @@ public class GoalList : List<Goal>
             }
         }
     }
+    public void ForceSave(string filename)
+    {
+        using (StreamWriter sw = new StreamWriter(filename))
+        {
+            foreach (Goal goal in this)
+            {
+                sw.WriteLine(goal.GetStringGoal());
+            }
+        }
+    }
     public void LoadGoals()
     {
         using (StreamReader sr = new StreamReader("goals.txt"))
+        {
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                String[] lines = line.Split("|");
+                if (lines[0] == "SimpleGoal")
+                {
+                    SimpleGoal simpleGoal = new SimpleGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
+                    this.Add(simpleGoal);
+                }
+                if (lines[0] == "EternalGoal")
+                {
+                    EternalGoal eternalGoal = new EternalGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
+                    this.Add(eternalGoal);
+                }
+                if (lines[0] == "ChecklistGoal")
+                {
+                    ChecklistGoal checklistGoal = new ChecklistGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]), int.Parse(lines[5]), int.Parse(lines[6]), int.Parse(lines[7]), lines[8]);
+                    this.Add(checklistGoal);
+                }
+            }
+        }
+    }   public void ForceLoad(string filename)
+    {
+        using (StreamReader sr = new StreamReader(filename))
         {
             string line;
             while ((line = sr.ReadLine()) != null)
