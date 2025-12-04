@@ -8,8 +8,10 @@ public class GoalList : List<Goal>
         {
             Goal goal = this[i];
             Console.WriteLine($"{i + 1}. {goal.GetGoal()}");
-            Console.WriteLine();
         }
+        Console.WriteLine();
+        Console.WriteLine($"You have {CalculateScore()} points.");
+        Console.WriteLine();
     }
     public void ListRecord()
     {
@@ -25,7 +27,7 @@ public class GoalList : List<Goal>
         int goalNum = int.Parse(Console.ReadLine()) - 1;
         this[goalNum].RecordEvent();
         Console.WriteLine($"Congratulations! You have earned {this[goalNum].GetPointValue()} points!");
-        Console.WriteLine($"\nYou now have {this[goalNum].GetScore()} points.\n");
+        Console.WriteLine($"\nYou now have {CalculateScore()} points.\n");
     }
     public void SaveGoals()
     {
@@ -62,5 +64,14 @@ public class GoalList : List<Goal>
                 }
             }
         }
+    }
+    public int CalculateScore()
+    {
+        int score = 0;
+        foreach (Goal goal in this)
+        {
+            score += goal.GetScore();
+        }
+        return score;
     }
 }

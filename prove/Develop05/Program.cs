@@ -8,6 +8,7 @@ class Program
     {
         FullClear();
         bool go = true;
+        goals.LoadGoals();
         while (go == true)
         {
             Console.WriteLine("Menu Options:");
@@ -40,6 +41,7 @@ class Program
             }
             else if (answer == 6)
             {
+                goals.SaveGoals();
                 go = false;
             }
         }

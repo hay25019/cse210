@@ -1,1 +1,2 @@
-EternalGoal|0|Read the Book of Mormon|Read the Book of Mormon for at least ten minutes every day.|10| 
+EternalGoal|20|Read the Book of Mormon|Read the Book of Mormon for at least ten minutes every day.|10| 
+ChecklistGoal|10|Eat 30 hot dogs|Eat 30 hot dogs|5|50|30|2| 
