@@ -33,7 +33,7 @@ public class GoalList : List<Goal>
         {
             foreach (Goal goal in this)
             {
-                sw.WriteLine($"{goal.GetName()}|{goal.GetDescription()}|{goal.GetPointValue()}");
+                sw.WriteLine(goal.GetStringGoal());
             }
         }
     }

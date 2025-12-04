@@ -10,6 +10,6 @@ public class SimpleGoal : Goal
     }
     public override string GetStringGoal()
     {
-        return $"SimpleGoal|{_score}{_name}|{_description}|{_pointValue}|{_completed}";
+        return $"SimpleGoal|{_score}|{_name}|{_description}|{_pointValue}|{_completed}";
     }
 }

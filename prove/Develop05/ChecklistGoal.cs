@@ -38,7 +38,7 @@ public class ChecklistGoal : Goal
     }
     public override string GetStringGoal()
     {
-        return $"ChecklistGoal|{_score}{_name}|{_description}|{_pointValue}|{_bonusValue}|{_timesToComplete}|{_timesCompleted}|{_completed}";
+        return $"ChecklistGoal|{_score}|{_name}|{_description}|{_pointValue}|{_bonusValue}|{_timesToComplete}|{_timesCompleted}|{_completed}";
     }
     public int GetTimesToComplete()
     {
