@@ -75,7 +75,8 @@ public class GoalList : List<Goal>
             }
         }
     
-    }public void ForceLoad(string filename)
+    }
+    public void ForceLoad(string filename)
     {
         using (StreamReader sr = new StreamReader(filename))
         {
