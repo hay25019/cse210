@@ -59,12 +59,12 @@ public class GoalList : List<Goal>
                 String[] lines = line.Split("|");
                 if (lines[0] == "SimpleGoal")
                 {
-                    SimpleGoal simpleGoal = new SimpleGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
+                    SimpleGoal simpleGoal = new SimpleGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]), lines[5]);
                     this.Add(simpleGoal);
                 }
                 if (lines[0] == "EternalGoal")
                 {
-                    EternalGoal eternalGoal = new EternalGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
+                    EternalGoal eternalGoal = new EternalGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]), lines[5]);
                     this.Add(eternalGoal);
                 }
                 if (lines[0] == "ChecklistGoal")
@@ -85,12 +85,12 @@ public class GoalList : List<Goal>
                 String[] lines = line.Split("|");
                 if (lines[0] == "SimpleGoal")
                 {
-                    SimpleGoal simpleGoal = new SimpleGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
+                    SimpleGoal simpleGoal = new SimpleGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]), lines[5]);
                     this.Add(simpleGoal);
                 }
                 if (lines[0] == "EternalGoal")
                 {
-                    EternalGoal eternalGoal = new EternalGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]));
+                    EternalGoal eternalGoal = new EternalGoal(int.Parse(lines[1]), lines[2], lines[3], int.Parse(lines[4]), lines[5]);
                     this.Add(eternalGoal);
                 }
                 if (lines[0] == "ChecklistGoal")

@@ -4,7 +4,7 @@ public class EternalGoal : Goal
     {
         _score += _pointValue;
     }
-    public EternalGoal(int score, string name, string description, int pointValue) : base(name, description, pointValue, score)
+    public EternalGoal(int score, string name, string description, int pointValue, string completed) : base(name, description, pointValue, score, completed)
     {
         
     }

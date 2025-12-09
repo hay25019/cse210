@@ -8,12 +8,13 @@ public abstract class Goal
     protected string _completed = " ";
     protected int _score;
 
-    public Goal(string name, string description, int pointValue, int score)
+    public Goal(string name, string description, int pointValue, int score, string completed)
     {
         _name = name;
         _description = description;
         _pointValue = pointValue;
         _score = score;
+        _completed = completed;
     }
     public Goal(string name, string description, int pointValue)
     {
