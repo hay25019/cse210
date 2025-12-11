@@ -7,10 +7,10 @@ public class Address
 
     public Address(string street, string city, string state, string country)
     {
-        _street = street;
-        _city = city;
-        _state = state;
-        _country = country;
+        _street = street.ToUpper();
+        _city = city.ToUpper();
+        _state = state.ToUpper();
+        _country = country.ToUpper();
     }
     public bool InUS()
     {
