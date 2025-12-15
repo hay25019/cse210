@@ -5,6 +5,7 @@ public class Running : Activity
     public Running(string date, int length, int distance) : base(date, length)
     {
         _distance = distance;
+        _activityType = "Running";
     }
     public override int CalcDistance()
     {
