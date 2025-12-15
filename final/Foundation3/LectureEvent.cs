@@ -14,6 +14,6 @@ public class LectureEvent : Event
         Console.WriteLine($"{_description}");
         Console.WriteLine($"Speaker: {_speaker}");
         Console.WriteLine($"Max seating: {_capacity}");
-        Console.WriteLine($"{_time} at {_address}");
+        Console.WriteLine($"{_time} at {_address.FullAddress()}");
     }
 }

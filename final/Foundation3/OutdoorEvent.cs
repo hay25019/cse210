@@ -12,6 +12,6 @@ public class OutdoorEvent : Event
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"{_description}");
         Console.WriteLine($"Weather: {_weather}");
-        Console.WriteLine($"{_time} at {_address}");
+        Console.WriteLine($"{_time} at {_address.FullAddress()}");
     }
 }

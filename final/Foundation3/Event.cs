@@ -21,13 +21,13 @@ abstract public class Event
     {
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"{_description}");
-        Console.WriteLine($"{_time} at {_address}");
+        Console.WriteLine($"{_time} at {_address.FullAddress()}");
     }
     public virtual void FullDetails()
     {
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"{_description}");
-        Console.WriteLine($"{_time} at {_address}");
+        Console.WriteLine($"{_time} at {_address.FullAddress()}");
     }
     public void ShortDescription()
     {

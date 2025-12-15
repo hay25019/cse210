@@ -11,6 +11,6 @@ public class ReceptionEvent : Event
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"{_description}");
         Console.WriteLine($"RSVP at {_email}");
-        Console.WriteLine($"{_time} at {_address}");
+        Console.WriteLine($"{_time} at {_address.FullAddress()}");
     }
 }
