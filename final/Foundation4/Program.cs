@@ -9,6 +9,7 @@ class Program
         activities.Add(new Cycling("15 Dec 2025", 30, 7));
         activities.Add(new Swimming("15 Dec 2025", 120, 200));
 
+        Console.Clear();
         foreach (Activity activity in activities)
         {
             activity.GetSummary();

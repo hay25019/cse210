@@ -1,15 +1,15 @@
 public class Cycling : Activity
 {
-    private int _speed;
+    private double _speed;
 
-    public Cycling(string date, int length, int speed) : base(date, length)
+    public Cycling(string date, double length, double speed) : base(date, length)
     {
         _speed = speed;
         _activityType = "Cycling";
     }
     public override double CalcDistance()
     {
-        return (_speed / 60) * _length;
+        return (_speed * _length) / 60;
     }
     public override double CalcSpeed()
     {
