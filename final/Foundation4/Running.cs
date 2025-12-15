@@ -1,8 +1,8 @@
 public class Running : Activity
 {
-    private int _distance;
+    private double _distance;
 
-    public Running(string date, int length, int distance) : base(date, length)
+    public Running(string date, int length, double distance) : base(date, length)
     {
         _distance = distance;
         _activityType = "Running";
