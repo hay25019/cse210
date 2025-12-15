@@ -2,12 +2,12 @@ using System.Net.Sockets;
 
 abstract public class Event
 {
-    private string _title;
-    private string _description;
-    private string _date;
-    private string _time;
-    private string _eventType;
-    private Address _address;
+    protected string _title;
+    protected string _description;
+    protected string _date;
+    protected string _time;
+    protected string _eventType;
+    protected Address _address;
 
     public Event(string title, string description, string date, string time, Address address)
     {
