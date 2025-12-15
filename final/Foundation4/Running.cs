@@ -1,0 +1,21 @@
+public class Running : Activity
+{
+    private int _distance;
+
+    public Running(string date, int length, int distance) : base(date, length)
+    {
+        _distance = distance;
+    }
+    public override int CalcDistance()
+    {
+        return _distance;
+    }
+    public override int CalcSpeed()
+    {
+        return (_distance / _length) * 60;
+    }
+    public override int CalcPace()
+    {
+        return 60 / CalcSpeed();
+    }
+}
