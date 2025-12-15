@@ -14,6 +14,6 @@ public abstract class Activity
     public abstract double CalcPace();
     public void GetSummary()
     {
-        Console.WriteLine($"{_date} {_activityType} ({_length} min)- Distance {CalcDistance()} miles, Speed {CalcSpeed()} mph, Pace: {CalcPace()} min per mile");
+        Console.WriteLine($"{_date} {_activityType} ({_length} min)- Distance {CalcDistance():0.0} miles, Speed {CalcSpeed():0.0} mph, Pace: {CalcPace():0.0} min per mile");
     }
 }
