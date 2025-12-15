@@ -1,6 +1,6 @@
 using System.Net.Sockets;
 
-abstract class Event
+abstract public class Event
 {
     string _title;
     string _description;
