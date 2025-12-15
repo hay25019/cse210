@@ -7,15 +7,15 @@ public class Running : Activity
         _distance = distance;
         _activityType = "Running";
     }
-    public override int CalcDistance()
+    public override double CalcDistance()
     {
         return _distance;
     }
-    public override int CalcSpeed()
+    public override double CalcSpeed()
     {
         return (_distance / _length) * 60;
     }
-    public override int CalcPace()
+    public override double CalcPace()
     {
         return 60 / CalcSpeed();
     }
