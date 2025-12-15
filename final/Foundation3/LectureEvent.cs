@@ -6,6 +6,7 @@ public class LectureEvent : Event
     {
         _speaker = speaker;
         _capacity = capacity;
+        _eventType = "Lecture";
     }
     public override void FullDetails()
     {

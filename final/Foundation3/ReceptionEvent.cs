@@ -4,6 +4,7 @@ public class ReceptionEvent : Event
     public ReceptionEvent(string title, string description, string date, string time, Address address, string email) : base(title, description, date, time, address)
     {
         _email = email;
+        _eventType = "Reception";
     }
     public override void FullDetails()
     {
